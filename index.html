@@ -10,7 +10,7 @@
   <meta property="og:title" content="NStudio — Comprendre le système. Développer l'humain." />
   <meta property="og:description" content="Bureau numérique, NScards, portail, assistant et accompagnement." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="Logos de NStudio.png" />
+  <meta property="og:image" content="Logo-NStudio.jpg" />
 
   <style>
     :root{
@@ -26,49 +26,48 @@
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
+
     html{scroll-behavior:smooth}
 
     body{
-    font-family:Arial, Helvetica, sans-serif;
-    color:var(--text);
-    line-height:1.65;
-    overflow-x:hidden;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      line-height:1.65;
+      overflow-x:hidden;
+      background:
+        linear-gradient(rgba(0,0,0,.62),rgba(0,0,0,.84)),
+        url("ArrierePlan-NStudio.png");
+      background-size:38%;
+      background-position:center top;
+      background-repeat:no-repeat;
+      background-attachment:fixed;
+      background-color:#020304;
+    }
 
-    background:
-    linear-gradient(
-        rgba(0,0,0,.55),
-        rgba(0,0,0,.75)
-    ),
-    url("ArrierePlan-NStudio.png");
-
-    background-size:40%;
-    background-position:center top;
-    background-repeat:no-repeat;
-    background-attachment:fixed;
-    background-color:#020304;
-}
-    
     body::before{
-    content:"";
-    position:fixed;
-    inset:0;
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-1;
+      background:
+        radial-gradient(circle at 50% 20%,rgba(31,156,255,.08),transparent 40%),
+        radial-gradient(circle at 50% 70%,rgba(199,154,74,.06),transparent 55%);
+    }
 
-    background:
-    radial-gradient(
-      circle at 50% 15%,
-      rgba(31,156,255,.10),
-      transparent 40%
-    ),
-
-    radial-gradient(
-      circle at 50% 65%,
-      rgba(199,154,74,.08),
-      transparent 50%
-    );
-
-    pointer-events:none;
-    z-index:-1;
-}
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-2;
+      background-image:
+        linear-gradient(rgba(240,210,138,.012) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(240,210,138,.010) 1px,transparent 1px);
+      background-size:90px 90px;
+      mask-image:radial-gradient(circle at center,black 0%,transparent 78%);
+      animation:quantumGrid 22s linear infinite;
+    }
 
     @keyframes quantumGrid{
       0%{background-position:0 0}
@@ -76,8 +75,8 @@
     }
 
     @keyframes softPulse{
-      0%,100%{box-shadow:0 0 22px rgba(31,156,255,.18),0 0 55px rgba(199,154,74,.08)}
-      50%{box-shadow:0 0 38px rgba(31,156,255,.28),0 0 80px rgba(199,154,74,.14)}
+      0%,100%{box-shadow:inset 0 0 90px rgba(31,156,255,.05),0 0 90px rgba(199,154,74,.05)}
+      50%{box-shadow:inset 0 0 110px rgba(31,156,255,.10),0 0 120px rgba(199,154,74,.08)}
     }
 
     @keyframes floatLight{
@@ -88,9 +87,9 @@
     a{color:inherit}
 
     .page{
-      width:min(1200px,calc(100% - 34px));
+      width:min(1440px,calc(100% - 40px));
       margin:auto;
-      padding:26px 0 56px;
+      padding:30px 0 90px;
     }
 
     .topbar{
@@ -104,9 +103,9 @@
       padding:13px 18px;
       border:1px solid var(--line);
       border-radius:999px;
-      background:rgba(5,7,10,.76);
+      background:rgba(5,7,10,.78);
       backdrop-filter:blur(18px);
-      box-shadow:0 18px 50px rgba(0,0,0,.40);
+      box-shadow:0 18px 50px rgba(0,0,0,.42);
     }
 
     .brand{
@@ -146,22 +145,18 @@
     .hero{
       position:relative;
       overflow:hidden;
-      min-height:88vh;
-      margin-top:28px;
-      padding:56px;
+      min-height:85vh;
+      margin-top:35px;
+      padding:90px 80px;
       display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:44px;
+      grid-template-columns:1.1fr .9fr;
+      gap:70px;
       align-items:center;
-      border-radius:38px;
-      border:1px solid var(--line);
-      background:
-        linear-gradient(135deg,rgba(0,0,0,.66),rgba(0,0,0,.40)),
-        radial-gradient(circle at 76% 32%,rgba(31,156,255,.12),transparent 45%),
-        radial-gradient(circle at 25% 72%,rgba(199,154,74,.10),transparent 38%);
-      box-shadow:
-        0 45px 120px var(--shadow),
-        inset 0 0 64px rgba(240,210,138,.035);
+      border-radius:42px;
+      border:1px solid rgba(240,210,138,.12);
+      background:linear-gradient(135deg,rgba(0,0,0,.68),rgba(0,0,0,.42));
+      backdrop-filter:blur(12px);
+      box-shadow:0 60px 140px rgba(0,0,0,.72),0 0 100px rgba(31,156,255,.05),0 0 60px rgba(199,154,74,.05);
     }
 
     .hero::before{
@@ -173,7 +168,6 @@
       height:680px;
       border-radius:50%;
       border:1px solid rgba(240,210,138,.12);
-      box-shadow:inset 0 0 90px rgba(31,156,255,.07),0 0 100px rgba(199,154,74,.06);
       animation:softPulse 7s ease-in-out infinite;
     }
 
@@ -188,7 +182,7 @@
       background:
         linear-gradient(135deg,transparent 0 45%,rgba(240,210,138,.055) 45% 47%,transparent 47%),
         linear-gradient(45deg,transparent 0 45%,rgba(31,156,255,.045) 45% 47%,transparent 47%);
-      opacity:.70;
+      opacity:.62;
       pointer-events:none;
     }
 
@@ -299,27 +293,28 @@
 
     .visual-stage{
       min-height:420px;
-      display:grid;
-      place-items:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
     }
 
     .hero-logo{
       width:100%;
-      max-width:415px;
-      border-radius:32px;
-      border:1px solid rgba(240,210,138,.22);
-      box-shadow:0 45px 120px rgba(0,0,0,.60),0 0 46px rgba(31,156,255,.10);
+      max-width:280px;
+      border-radius:24px;
+      border:1px solid rgba(240,210,138,.18);
+      box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 40px rgba(31,156,255,.08);
       animation:floatLight 7s ease-in-out infinite;
     }
 
     .fresco{
-      margin-top:42px;
-      margin-bottom:58px;
-      border-radius:36px;
+      margin-top:90px;
+      margin-bottom:100px;
+      border-radius:42px;
       overflow:hidden;
       border:1px solid rgba(240,210,138,.18);
-      box-shadow:0 45px 110px rgba(0,0,0,.58),0 0 42px rgba(199,154,74,.05);
-      background:rgba(0,0,0,.28);
+      box-shadow:0 60px 140px rgba(0,0,0,.65),0 0 50px rgba(199,154,74,.06);
+      background:rgba(0,0,0,.25);
     }
 
     .fresco img{
@@ -370,9 +365,7 @@
       padding:28px;
       border-radius:26px;
       border:1px solid rgba(240,210,138,.14);
-      background:
-        linear-gradient(135deg,rgba(255,255,255,.05),rgba(255,255,255,.012)),
-        rgba(4,6,9,.78);
+      background:linear-gradient(135deg,rgba(255,255,255,.05),rgba(255,255,255,.012)),rgba(4,6,9,.78);
       backdrop-filter:blur(10px);
       box-shadow:0 24px 60px rgba(0,0,0,.42);
       transition:.25s ease;
@@ -400,9 +393,7 @@
       margin-bottom:12px;
     }
 
-    .card p{
-      color:#ddd5c8;
-    }
+    .card p{color:#ddd5c8}
 
     .number{
       font-size:32px;
@@ -434,10 +425,7 @@
       border-radius:34px;
       padding:42px;
       border:1px solid rgba(240,210,138,.18);
-      background:
-        radial-gradient(circle at 50% 0%,rgba(31,156,255,.12),transparent 55%),
-        linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.014)),
-        rgba(0,0,0,.38);
+      background:radial-gradient(circle at 50% 0%,rgba(31,156,255,.12),transparent 55%),linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.014)),rgba(0,0,0,.38);
       backdrop-filter:blur(12px);
       box-shadow:0 34px 90px rgba(0,0,0,.55);
       text-align:center;
@@ -470,7 +458,11 @@
     }
 
     @media(max-width:980px){
-      body{background-attachment:scroll}
+      body{
+        background-size:92%;
+        background-position:center top;
+        background-attachment:scroll;
+      }
 
       .topbar{
         position:static;
@@ -485,14 +477,21 @@
 
       .hero{
         text-align:center;
-        padding:34px;
+        padding:38px 26px;
+        gap:34px;
       }
 
       .credo{text-align:left}
       .actions{justify-content:center}
       .btn{width:100%}
       h1{letter-spacing:-2px}
-      .hero-logo{max-width:350px}
+      .hero-logo{max-width:230px}
+
+      .fresco{
+        margin-top:55px;
+        margin-bottom:65px;
+        border-radius:28px;
+      }
     }
   </style>
 </head>
@@ -542,19 +541,13 @@
       </div>
 
       <div class="visual-stage">
+        <img src="Logo-NStudio.jpg" alt="Logo NStudio" class="hero-logo">
+      </div>
+    </section>
 
-<img
-src="Logo-NStudio.jpg"
-alt="Logo NStudio"
-class="hero-logo">
-
-</div><section class="fresco" aria-label="Fresque NStudio">
-
-<img
-src="Banniere-NStudio.jpg"
-alt="Bannière NStudio">
-
-</section>
+    <section class="fresco" aria-label="Fresque NStudio">
+      <img src="Banniere-NStudio.jpg" alt="Bannière NStudio">
+    </section>
 
     <section id="vision">
       <div class="section-title">
