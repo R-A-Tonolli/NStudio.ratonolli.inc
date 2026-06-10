@@ -11,7 +11,7 @@
   <meta property="og:title" content="NStudio — Comprendre le système. Développer l'humain." />
   <meta property="og:description" content="NScards, accompagnement numérique, portail client et assistant premium." />
   <meta property="og:type" content="website" />
-  <meta property<meta property="og:image" content="Logo-NStudio.jpg" />="og:image" content="preview.jpg" />
+  <meta property="og:image" content="Logo-NStudio.jpg" />
 
   <style>
     :root {
@@ -502,6 +502,56 @@
       box-shadow: 0 0 0 3px rgba(76,201,255,0.10);
     }
 
+
+    /* ===== NStudio V5 Branding Images ===== */
+
+    .navbar-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(76,201,255,.35);
+      box-shadow:
+        0 0 18px rgba(76,201,255,.20),
+        0 0 40px rgba(76,201,255,.08);
+    }
+
+    .visual-stage {
+      min-height: 420px;
+      display: grid;
+      place-items: center;
+    }
+
+    .hero-logo {
+      width: 100%;
+      max-width: 440px;
+      border-radius: 30px;
+      border: 1px solid rgba(76,201,255,.22);
+      box-shadow:
+        0 35px 85px rgba(0,0,0,.45),
+        0 0 70px rgba(76,201,255,.12);
+      transition: .35s ease;
+    }
+
+    .hero-logo:hover {
+      transform: translateY(-8px) scale(1.02);
+    }
+
+    .nstudio-banner {
+      margin-top: 42px;
+      margin-bottom: 60px;
+    }
+
+    .banner-image {
+      width: 100%;
+      display: block;
+      border-radius: 34px;
+      border: 1px solid rgba(76,201,255,.22);
+      box-shadow:
+        0 35px 90px rgba(0,0,0,.45),
+        0 0 70px rgba(76,201,255,.08);
+    }
+
     .footer {
       text-align: center;
       color: var(--muted);
@@ -538,6 +588,8 @@
       h1 { letter-spacing: -2px; }
 
       .premium-panel { padding: 30px; }
+
+      .hero-logo { max-width: 360px; }
     }
   </style>
 </head>
@@ -547,29 +599,7 @@
 
     <header class="topbar">
       <div class="brand">
-        <img src="Logo-NStudio.jpg"
-     alt="Logo NStudio"
-     class="navbar-logo">
-        .navbar-logo{
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  object-fit:cover;
-
-  border:1px solid rgba(76,201,255,.35);
-
-  box-shadow:
-    0 0 18px rgba(76,201,255,.20),
-    0 0 40px rgba(76,201,255,.08);
-}
-   
-
-  border:1px solid rgba(76,201,255,.35);
-
-  box-shadow:
-    0 0 18px rgba(76,201,255,.20),
-    0 0 40px rgba(76,201,255,.08);
-}
+        <img src="Logo-NStudio.jpg" alt="Logo NStudio" class="navbar-logo">
         <div>NStudio</div>
       </div>
 
@@ -609,59 +639,15 @@
         </div>
       </div>
 
-      <div class="orbital" aria-hidden="true">
-        <div class="orbital-card">
-          <span class="orbit-label a">NScard</span>
-          <span class="orbit-label b">Portail</span>
-          <span class="orbit-label c">Assistant</span>
-          <span class="orbit-label d">Accompagnement</span>
-          <img src="Logo-NStudio.jpg"
-     alt="Logo NStudio"
-     class="hero-logo">
-          .hero-logo{
-
-  width:180px;
-  height:180px;
-
-  object-fit:cover;
-
-  border-radius:24px;
-
-  border:1px solid rgba(76,201,255,.25);
-
-  box-shadow:
-      0 0 70px rgba(76,201,255,.15);
-
-}
-        </div>
+      <div class="visual-stage">
+        <img src="Logo-NStudio.jpg" alt="Logo NStudio" class="hero-logo">
       </div>
     </section>
-<section class="nstudio-banner">
 
-  <img src="Banniere-NStudio.jpg"
-       alt="Bannière NStudio"
-       class="banner-image">
+    <section class="nstudio-banner">
+      <img src="Banniere-NStudio.jpg" alt="Bannière NStudio" class="banner-image">
+    </section>
 
-</section>.nstudio-banner{
-
-  margin-top:40px;
-  margin-bottom:60px;
-
-}
-
-.banner-image{
-
-  width:100%;
-
-  border-radius:34px;
-
-  border:1px solid rgba(76,201,255,.25);
-
-  box-shadow:
-      0 35px 90px rgba(0,0,0,.45),
-      0 0 70px rgba(76,201,255,.08);
-
-}
     <section id="ecosysteme">
       <div class="section-title">
         <span>Écosystème</span>
