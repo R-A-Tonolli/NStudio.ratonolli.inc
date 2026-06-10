@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NStudio</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.45),
+        rgba(0,0,0,.75)
+    ),
+    url("ArrierePlan-NStudio.png");
+
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background:
+
+    radial-gradient(
+        circle at center,
+        rgba(31,156,255,.08),
+        transparent 45%
+    ),
+
+    radial-gradient(
+        circle at center,
+        rgba(199,154,74,.08),
+        transparent 65%
+    );
+
+    pointer-events:none;
+}
+
+.portal{
+
+    position:relative;
+
+    text-align:center;
+
+    max-width:900px;
+
+    padding:40px;
+
+    z-index:2;
+}
+
+.logo-link{
+
+    display:inline-block;
+
+    transition:.5s ease;
+}
+
+.logo-link:hover{
+
+    transform:scale(1.05);
+
+    filter:
+    drop-shadow(0 0 30px rgba(31,156,255,.40))
+    drop-shadow(0 0 60px rgba(199,154,74,.25));
+}
+
+.logo{
+
+    width:240px;
+    max-width:80vw;
+
+    border-radius:50%;
+
+    box-shadow:
+    0 0 40px rgba(31,156,255,.15),
+    0 0 80px rgba(199,154,74,.15);
+}
+
+h1{
+
+    margin-top:35px;
+
+    color:white;
+
+    font-size:clamp(42px,8vw,90px);
+
+    letter-spacing:-2px;
+}
+
+.tagline{
+
+    margin-top:15px;
+
+    color:#e6d7bc;
+
+    font-size:clamp(18px,2vw,28px);
+
+    line-height:1.6;
+}
+
+.separator{
+
+    width:120px;
+    height:1px;
+
+    margin:35px auto;
+
+    background:
+    linear-gradient(
+        to right,
+        transparent,
+        rgba(240,210,138,.8),
+        transparent
+    );
+}
+
+.enter-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:16px 40px;
+
+    border-radius:999px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    color:#050505;
+
+    background:
+    linear-gradient(
+        135deg,
+        #fff8de,
+        #e6c477,
+        #b57a27
+    );
+
+    transition:.35s ease;
+
+    box-shadow:
+    0 0 30px rgba(199,154,74,.25);
+}
+
+.enter-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 0 50px rgba(199,154,74,.40);
+}
+
+.signature{
+
+    margin-top:40px;
+
+    color:rgba(255,255,255,.55);
+
+    font-size:14px;
+
+    letter-spacing:2px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="portal">
+
+    <a href="index.html" class="logo-link">
+
+        <img
+        src="Logo-NStudio.jpg"
+        alt="Logo NStudio"
+        class="logo">
+
+    </a>
+
+    <h1>NStudio</h1>
+
+    <p class="tagline">
+        Comprendre le système.<br>
+        Développer l'humain.
+    </p>
+
+    <div class="separator"></div>
+
+    <a href="index.html" class="enter-btn">
+        ACCÉDER AU BUREAU
+    </a>
+
+    <div class="signature">
+        Bureau Numérique • Structuration • Transmission
+    </div>
+
+</div>
+
+</body>
+</html>
