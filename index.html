@@ -29,41 +29,46 @@
     html{scroll-behavior:smooth}
 
     body{
-      font-family:Arial, Helvetica, sans-serif;
-      color:var(--text);
-      line-height:1.65;
-      overflow-x:hidden;
-      background:
-        linear-gradient(rgba(0,0,0,.20),rgba(0,0,0,.82)),
-        url("Arriere-plan-site-web.png") center top / cover fixed no-repeat,
-        #020304;
-    }
+    font-family:Arial, Helvetica, sans-serif;
+    color:var(--text);
+    line-height:1.65;
+    overflow-x:hidden;
 
+    background:
+    linear-gradient(
+      rgba(0,0,0,.40),
+      rgba(0,0,0,.72)
+    ),
+    url("ArrierePlan-NStudio.png");
+
+    background-size:cover;
+    background-position:center top;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-color:#020304;
+}
+    
     body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      z-index:-2;
-      pointer-events:none;
-      background:
-        radial-gradient(circle at 50% 10%,rgba(31,156,255,.12),transparent 28%),
-        radial-gradient(circle at 50% 55%,rgba(199,154,74,.10),transparent 36%),
-        linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.82));
-    }
+    content:"";
+    position:fixed;
+    inset:0;
 
-    body::after{
-      content:"";
-      position:fixed;
-      inset:0;
-      z-index:-1;
-      pointer-events:none;
-      background-image:
-        linear-gradient(rgba(240,210,138,.018) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(240,210,138,.014) 1px,transparent 1px);
-      background-size:90px 90px;
-      mask-image:radial-gradient(circle at center,black 0%,transparent 78%);
-      animation:quantumGrid 18s linear infinite;
-    }
+    background:
+    radial-gradient(
+      circle at 50% 15%,
+      rgba(31,156,255,.10),
+      transparent 40%
+    ),
+
+    radial-gradient(
+      circle at 50% 65%,
+      rgba(199,154,74,.08),
+      transparent 50%
+    );
+
+    pointer-events:none;
+    z-index:-1;
+}
 
     @keyframes quantumGrid{
       0%{background-position:0 0}
@@ -497,7 +502,7 @@
 
     <header class="topbar">
       <div class="brand">
-        <img src="Logos de NStudio.png" alt="Logo NStudio" class="navbar-logo">
+        <img src="Logo-NStudio.jpg" alt="Logo NStudio" class="navbar-logo">
         <div>NStudio</div>
       </div>
 
@@ -537,13 +542,24 @@
       </div>
 
       <div class="visual-stage">
-        <img src="Logos de NStudio.png" alt="Logo NStudio" class="hero-logo">
+
+<img
+src="Logo-NStudio.jpg"
+alt="Logo NStudio"
+class="hero-logo">
+
+</div>
+        <img src="Logo-NStudio.jpg" alt="Logo NStudio" class="hero-logo">
       </div>
     </section>
 
     <section class="fresco" aria-label="Fresque NStudio">
-      <img src="Banniere de NStudio.png" alt="Bannière NStudio">
-    </section>
+
+<img
+src="Banniere-NStudio.jpg"
+alt="Bannière NStudio">
+
+</section>
 
     <section id="vision">
       <div class="section-title">
