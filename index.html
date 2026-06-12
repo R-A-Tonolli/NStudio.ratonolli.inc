@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NStudio</title>
+<title>NStudio | Portail d’Entrée</title>
+<meta name="description" content="NStudio — Comprendre le système. Développer l'humain.">
 
-<meta name="description" content="NStudio - Comprendre le système. Développer l'humain.">
+<meta property="og:title" content="NStudio">
+<meta property="og:description" content="Comprendre le système. Développer l'humain.">
+<meta property="og:image" content="Logo-NStudio.jpg">
 
 <style>
+:root{
+    --bg:#020304;
+    --text:#f4f0e8;
+    --muted:#b9b0a3;
+    --gold:#c79a4a;
+    --gold-soft:#f0d28a;
+    --mana:#1f9cff;
+    --mana-soft:#7dd7ff;
+    --line:rgba(240,210,138,.20);
+    --glass:rgba(0,0,0,.48);
+}
 
 *{
     margin:0;
@@ -25,22 +37,21 @@ body{
 }
 
 body{
-
     font-family:Arial, Helvetica, sans-serif;
+    color:var(--text);
+    overflow:hidden;
 
     background:
-    linear-gradient(
-        rgba(0,0,0,.55),
-        rgba(0,0,0,.82)
-    ),
-    url("ArrierePlan-NStudio.png");
+        linear-gradient(
+            rgba(0,0,0,.58),
+            rgba(0,0,0,.88)
+        ),
+        url("ArrierePlan-NStudio.png");
 
-    background-size:65%;
+    background-size:68%;
     background-position:center center;
     background-repeat:no-repeat;
     background-attachment:fixed;
-
-    overflow:hidden;
 
     display:flex;
     justify-content:center;
@@ -48,262 +59,282 @@ body{
 }
 
 body::before{
-
     content:"";
-
     position:fixed;
     inset:0;
+    pointer-events:none;
 
     background:
+        radial-gradient(
+            circle at center,
+            rgba(31,156,255,.10),
+            transparent 42%
+        ),
+        radial-gradient(
+            circle at center,
+            rgba(199,154,74,.10),
+            transparent 68%
+        );
+}
 
-    radial-gradient(
-        circle at center,
-        rgba(31,156,255,.08),
-        transparent 45%
-    ),
-
-    radial-gradient(
-        circle at center,
-        rgba(199,154,74,.08),
-        transparent 65%
-    );
-
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
     pointer-events:none;
+
+    background-image:
+        linear-gradient(rgba(240,210,138,.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(240,210,138,.012) 1px, transparent 1px);
+
+    background-size:90px 90px;
+    mask-image:radial-gradient(circle at center, black 0%, transparent 78%);
+    animation:gridMove 26s linear infinite;
+}
+
+@keyframes gridMove{
+    from{background-position:0 0;}
+    to{background-position:90px 90px;}
+}
+
+@keyframes floatLight{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
 }
 
 .portal{
-
     position:relative;
+    z-index:2;
+
+    width:min(920px,92vw);
 
     text-align:center;
 
-    max-width:900px;
+    padding:64px 58px;
 
-    padding:60px;
+    border-radius:46px;
 
-    border-radius:40px;
+    border:1px solid var(--line);
 
     background:
-    linear-gradient(
-        rgba(0,0,0,.35),
-        rgba(0,0,0,.55)
-    );
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.012)
+        ),
+        var(--glass);
 
-    backdrop-filter:blur(12px);
-
-    border:
-    1px solid rgba(240,210,138,.12);
+    backdrop-filter:blur(16px);
 
     box-shadow:
-    0 30px 120px rgba(0,0,0,.45);
-
-    z-index:2;
+        0 40px 140px rgba(0,0,0,.62),
+        0 0 80px rgba(31,156,255,.08),
+        0 0 100px rgba(199,154,74,.07);
 }
 
 .logo-link{
-
     display:inline-block;
-
     transition:.5s ease;
+}
+
+.logo-link:hover{
+    transform:scale(1.05) rotate(1deg);
+
+    filter:
+        drop-shadow(0 0 34px rgba(31,156,255,.45))
+        drop-shadow(0 0 70px rgba(199,154,74,.28));
 }
 
 .logo{
-
     width:280px;
-
-    max-width:80vw;
+    max-width:78vw;
 
     border-radius:50%;
 
-    transition:.5s ease;
-
     box-shadow:
-    0 0 50px rgba(31,156,255,.12),
-    0 0 120px rgba(199,154,74,.15);
-}
+        0 0 55px rgba(31,156,255,.14),
+        0 0 130px rgba(199,154,74,.16);
 
-.logo:hover{
-
-    transform:
-    scale(1.05)
-    rotate(1deg);
-
-    box-shadow:
-    0 0 80px rgba(31,156,255,.25),
-    0 0 180px rgba(199,154,74,.25);
+    animation:floatLight 7s ease-in-out infinite;
 }
 
 h1{
+    margin-top:34px;
 
-    margin-top:35px;
+    font-size:clamp(48px,8vw,96px);
+    line-height:.9;
+
+    letter-spacing:-3px;
 
     color:white;
 
-    font-size:clamp(42px,8vw,90px);
+    text-shadow:
+        0 10px 40px rgba(0,0,0,.55),
+        0 0 32px rgba(199,154,74,.12);
+}
 
-    letter-spacing:-2px;
+h1 span{
+    color:var(--gold-soft);
 }
 
 .tagline{
-
-    margin-top:15px;
+    margin-top:18px;
 
     color:#e6d7bc;
 
     font-size:clamp(18px,2vw,28px);
-
-    line-height:1.6;
+    line-height:1.55;
 }
 
 .separator{
-
-    width:120px;
+    width:140px;
     height:1px;
 
-    margin:35px auto;
+    margin:36px auto;
 
     background:
-    linear-gradient(
-        to right,
-        transparent,
-        rgba(240,210,138,.8),
-        transparent
-    );
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(240,210,138,.85),
+            transparent
+        );
 }
 
-.enter-btn{
+.actions{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+
+    align-items:center;
+}
+
+.btn{
+    width:min(380px,100%);
 
     display:inline-flex;
-
     align-items:center;
     justify-content:center;
 
-    padding:16px 40px;
+    min-height:54px;
+
+    padding:15px 34px;
 
     border-radius:999px;
 
     text-decoration:none;
 
-    font-weight:700;
+    font-weight:900;
 
-    letter-spacing:2px;
+    letter-spacing:1.8px;
 
+    transition:.3s ease;
+}
+
+.btn-gold{
     color:#050505;
 
     background:
-    linear-gradient(
-        135deg,
-        #fff8de,
-        #e6c477,
-        #b57a27
-    );
-
-    transition:.35s ease;
+        linear-gradient(
+            135deg,
+            #fff8de,
+            #e6c477,
+            #b57a27
+        );
 
     box-shadow:
-    0 0 30px rgba(199,154,74,.25);
+        0 0 32px rgba(199,154,74,.28);
 }
 
-.enter-btn:hover{
-
+.btn-gold:hover{
     transform:translateY(-4px);
 
     box-shadow:
-    0 0 50px rgba(199,154,74,.40);
+        0 0 55px rgba(199,154,74,.45);
 }
 
-.premium-btn{
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    margin-top:20px;
-
-    padding:18px 42px;
-
-    border-radius:999px;
-
-    text-decoration:none;
-
-    font-weight:700;
-
-    letter-spacing:2px;
-
-    color:#f4f0e8;
+.btn-dark{
+    color:var(--text);
 
     border:1px solid rgba(240,210,138,.25);
 
     background:
-    linear-gradient(
-        135deg,
-        rgba(10,18,28,.98),
-        rgba(18,32,48,.98)
-    );
+        linear-gradient(
+            135deg,
+            rgba(10,18,28,.96),
+            rgba(18,32,48,.96)
+        );
 
     box-shadow:
-    0 0 30px rgba(31,156,255,.18),
-    0 0 60px rgba(199,154,74,.08);
-
-    transition:.35s ease;
+        0 0 30px rgba(31,156,255,.16),
+        0 0 60px rgba(199,154,74,.08);
 }
 
-.premium-btn:hover{
+.btn-dark:hover{
+    transform:translateY(-4px) scale(1.02);
 
-    transform:
-    translateY(-4px)
-    scale(1.03);
-
-    border-color:
-    rgba(240,210,138,.65);
+    border-color:rgba(240,210,138,.58);
 
     box-shadow:
-    0 0 50px rgba(31,156,255,.35),
-    0 0 100px rgba(199,154,74,.20);
+        0 0 48px rgba(31,156,255,.32),
+        0 0 90px rgba(199,154,74,.18);
 }
 
 .signature{
+    margin-top:42px;
 
-    margin-top:40px;
-
-    color:rgba(255,255,255,.55);
+    color:rgba(255,255,255,.58);
 
     font-size:14px;
 
     letter-spacing:2px;
 }
 
+.anima-line{
+    margin-top:18px;
+
+    color:rgba(240,210,138,.62);
+
+    font-size:12px;
+
+    letter-spacing:2.5px;
+
+    text-transform:uppercase;
+}
+
 @media(max-width:768px){
 
     body{
-        background-size:140%;
+        background-size:145%;
+        background-attachment:scroll;
     }
 
     .portal{
-        width:92%;
-        padding:40px 25px;
+        padding:42px 24px;
+        border-radius:34px;
     }
 
     .logo{
         width:220px;
     }
 
-    .enter-btn,
-    .premium-btn{
-        width:100%;
+    h1{
+        letter-spacing:-2px;
+    }
+
+    .signature{
+        font-size:12px;
+        line-height:1.8;
     }
 }
-
 </style>
-
 </head>
 
 <body>
 
-<div class="portal">
+<main class="portal">
 
-    <a href="plateforme.html" class="logo-link">
+    <a href="plateforme.html" class="logo-link" aria-label="Entrer dans le bureau numérique NStudio">
 
         <img
         src="Logo-NStudio.jpg"
@@ -312,7 +343,7 @@ h1{
 
     </a>
 
-    <h1>NStudio</h1>
+    <h1>N<span>Studio</span></h1>
 
     <p class="tagline">
         Comprendre le système.<br>
@@ -321,25 +352,27 @@ h1{
 
     <div class="separator"></div>
 
-    <a href="plateforme.html" class="enter-btn">
-        ACCÉDER AU BUREAU
-    </a>
+    <div class="actions">
 
-    <a
-    href="https://chatgpt.com/g/g-681b86f1f87c8191b695e33446183ea3-a-e-n-a-anima-echo-de-la-nouvelle-aube"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="premium-btn">
+        <a href="plateforme.html" class="btn btn-gold">
+            ACCÉDER AU BUREAU
+        </a>
 
-        ◈ OUVRIR LE PORTAIL PREMIUM
+        <a href="la.chambre.noire.html" class="btn btn-dark">
+            ◈ OUVRIR LA CHAMBRE NOIRE
+        </a>
 
-    </a>
-
-    <div class="signature">
-        Bureau Numérique • Structuration • Transmission
     </div>
 
-</div>
+    <div class="signature">
+        Bureau Numérique • NScards • Transmission • Assistance Premium
+    </div>
+
+    <div class="anima-line">
+        Moteur d’Ânima actif
+    </div>
+
+</main>
 
 </body>
 </html>
