@@ -420,7 +420,90 @@ h1 span{
 .lead-form button:hover{
     transform:translateY(-2px);
 }
-    
+.premium-popup{
+
+    position:fixed;
+    inset:0;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(0,0,0,.82);
+
+    backdrop-filter:blur(10px);
+
+    z-index:9999;
+}
+
+.premium-box{
+
+    width:min(500px,90vw);
+
+    padding:40px;
+
+    border-radius:28px;
+
+    text-align:center;
+
+    border:1px solid rgba(240,210,138,.25);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.05),
+            rgba(255,255,255,.01)
+        ),
+        rgba(0,0,0,.85);
+
+    box-shadow:
+        0 0 80px rgba(31,156,255,.15),
+        0 0 120px rgba(199,154,74,.10);
+}
+
+.premium-box h2{
+
+    color:var(--gold-soft);
+
+    margin-bottom:15px;
+}
+
+.premium-phone{
+
+    display:block;
+
+    margin:25px 0;
+
+    font-size:24px;
+
+    font-weight:900;
+
+    text-decoration:none;
+
+    color:white;
+}
+
+.premium-close{
+
+    padding:12px 28px;
+
+    border:none;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    font-weight:900;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff8de,
+            #e6c477,
+            #b57a27
+        );
+}    
 @media(max-width:768px){
 
     body{
@@ -514,11 +597,9 @@ h1 span{
             ✦ DÉCOUVRIR NSTUDIO
         </a>
 
-        <a href="la.chambre.noire.html" class="btn btn-dark">
-            ◈ ACCÈS PREMIUM A.E.N.A
-        </a>
-
-    </div>
+        <button class="btn btn-dark" onclick="ouvrirPremium()">
+    ◈ ACCÈS PREMIUM A.E.N.A
+</button>
 
     <div class="signature">
         Bureau Numérique • NScards • Transmission • Assistance Premium
@@ -527,8 +608,44 @@ h1 span{
     <div class="anima-line">
         Moteur d’Ânima actif
     </div>
+<div id="premiumPopup" class="premium-popup">
 
+    <div class="premium-box">
+
+        <h2>Accès Premium NStudio</h2>
+
+        <p>
+            Pour accéder à l'accompagnement Premium,
+            contactez directement Romain.
+        </p>
+
+        <a href="tel:+33601840379" class="premium-phone">
+            📞 +33 6 01 84 03 79
+        </a>
+
+        <button class="premium-close" onclick="fermerPremium()">
+            Fermer
+        </button>
+
+    </div>
+
+</div>
 </main>
 
+<script>
+
+function ouvrirPremium(){
+
+    document.getElementById("premiumPopup").style.display = "flex";
+
+}
+
+function fermerPremium(){
+
+    document.getElementById("premiumPopup").style.display = "none";
+
+}
+
+</script>    
 </body>
 </html>
