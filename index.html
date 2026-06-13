@@ -33,13 +33,16 @@
 html,
 body{
     width:100%;
-    height:100%;
+    min-height:100vh;
+
+    background:#020304;
 }
 
 body{
     font-family:Arial, Helvetica, sans-serif;
     color:var(--text);
-    overflow:hidden;
+    overflow-x:hidden;
+    overflow-y:auto;
 
     background:
         linear-gradient(
@@ -48,7 +51,7 @@ body{
         ),
         url("ArrierePlan-NStudio.png");
 
-    background-size:52%;
+    background-sibackground-size:cover;
     background-position:center center;
     background-repeat:no-repeat;
     background-attachment:fixed;
@@ -56,6 +59,7 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
+    padding:40px 20px;
 }
 
 body::before{
@@ -557,17 +561,6 @@ h1 span{
 
     <div class="separator"></div>
 
-<div class="lead-capture">
-
-    <h3>Recevoir les nouveautés NStudio</h3>
-
-    <p>
-        Recevez les évolutions de la plateforme,
-        les nouvelles NScards,
-        les ouvertures Premium
-        et les projets NStudio.
-    </p>
-
     <form
         class="lead-form"
         action="https://formsubmit.co/romain.tonolli@aol.fr"
@@ -597,8 +590,8 @@ h1 span{
             ✦ DÉCOUVRIR NSTUDIO
         </a>
 
-        <button class="btn btn-dark" onclick="ouvrirPremium()">
-    ◈ ACCÈS PREMIUM A.E.N.A
+        <button class="btn btn-dark" onclick="ouvr<a href="tel:+33601840379" class="btn btn-dark">
+        ◈ ACCÈS PREMIUM A.E.N.A</a>
 </button>
 
     <div class="signature">
@@ -608,7 +601,7 @@ h1 span{
     <div class="anima-line">
         Moteur d’Ânima actif
     </div>
-<div id="premiumPopup" class="premium-popup">
+
 
     <div class="premium-box">
 
