@@ -48,7 +48,7 @@ body{
         ),
         url("ArrierePlan-NStudio.png");
 
-    background-size:68%;
+    background-size:52%;
     background-position:center center;
     background-repeat:no-repeat;
     background-attachment:fixed;
@@ -145,7 +145,14 @@ body::after{
         drop-shadow(0 0 70px rgba(199,154,74,.28));
 }
 
+.logo-link:hover .logo{
+
+    transform:scale(1.03);
+
+}
+
 .logo{
+    cursor:pointer;
     width:280px;
     max-width:78vw;
 
@@ -158,6 +165,22 @@ body::after{
     animation:floatLight 7s ease-in-out infinite;
 }
 
+.status{
+
+    margin-top:18px;
+
+    color:var(--gold-soft);
+
+    font-size:13px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    opacity:.85;
+}
+
+    
 h1{
     margin-top:34px;
 
@@ -439,7 +462,9 @@ h1 span{
 
     </a>
 
-    <h1>N<span>Studio</span></h1>
+    <h1>N<span>Studio</span></h1><div class="status">
+    Architecture Numérique • NStudio Premium
+</div>
 
     <p class="tagline">
     Structurer les idées.<br>
@@ -449,14 +474,48 @@ h1 span{
 
     <div class="separator"></div>
 
+<div class="lead-capture">
+
+    <h3>Recevoir les nouveautés NStudio</h3>
+
+    <p>
+        Recevez les évolutions de la plateforme,
+        les nouvelles NScards,
+        les ouvertures Premium
+        et les projets NStudio.
+    </p>
+
+    <form
+        class="lead-form"
+        action="https://formsubmit.co/romain.tonolli@aol.fr"
+        method="POST">
+
+        <input
+            type="email"
+            name="email"
+            placeholder="Votre adresse e-mail"
+            required>
+
+        <button type="submit">
+            Rejoindre NStudio
+        </button>
+
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="Nouvelle inscription NStudio">
+        <input type="hidden" name="_template" value="table">
+
+    </form>
+
+</div>
+    
     <div class="actions">
 
         <a href="plateforme.html" class="btn btn-gold">
-            ACCÉDER AU BUREAU
+            ✦ DÉCOUVRIR NSTUDIO
         </a>
 
         <a href="la.chambre.noire.html" class="btn btn-dark">
-            ◈ OUVRIR LA CHAMBRE NOIRE
+            ◈ ACCÈS PREMIUM A.E.N.A
         </a>
 
     </div>
